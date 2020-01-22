@@ -1,4 +1,10 @@
 import sys, getopt
+
+# Usage:
+# python3 exampl2.py -d 100 -t 10
+# python3 exampl2.py -s 50 -t 10
+
+
 # Store defaults
 speed = 0
 time = 0
@@ -17,11 +23,11 @@ except getopt.GetoptError as e:
 # a == argument passed to the o
 ###############################
 for o, a in myopts:
-    if o == '-d':
+    if o == '-d' or o == '--distance':
         distance = int(a)
-    elif o == '-t':
+    elif o == '-t' or o == '--time':
         time = int(a)
-    elif o == '-s':
+    elif o == '-s' or o == '--speed':
         speed = int(a)
     else:
         print("Usage: %s -d distance -t time OR -s speed -t time" % sys.argv[0])
@@ -34,7 +40,3 @@ if speed > 0:
 elif distance > 0:
     speed = distance / time
     print(f"Speed required: {speed}")
-
-
-
-
