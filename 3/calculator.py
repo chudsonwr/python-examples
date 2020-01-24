@@ -1,5 +1,11 @@
 
-size = int(input('Enter cube side length in cm: '))
+size = input('Enter cube side length in cm: ')
+
+try:
+    size = int(size)
+except:
+    print("Hey dude thats not a number!")
+    exit()
 
 volume = size**3 * 1000
 
